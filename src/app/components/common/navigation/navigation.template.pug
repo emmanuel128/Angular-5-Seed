@@ -1,0 +1,51 @@
+nav.navbar-default.navbar-static-side(role='navigation')
+	.sidebar-collapse
+		ul#side-menu.nav.metismenu
+			li.nav-header
+				.profile-element(dropdown)
+					img.img-circle(alt='image', src='assets/images/profile_small.jpg')
+					a(dropdownToggle='')
+						span.block.m-t-xs
+							strong.font-bold David Williams
+						span.text-muted.text-xs.block
+							| Art Director 
+							b.caret
+					ul.animated.fadeInRight.dropdown-menu(*dropdownMenu='')
+						li
+							a(href='#') Profile
+						li
+							a(href='#') Contacts
+						li
+							a(href='#') Mailbox
+						li.divider
+						li
+							a(href='#') Logout
+				.logo-element IN+
+			li([ngClass]="{active: activeRoute('starter')}")
+				a([routerLink]="['/starterview']")
+					i.fa.fa-th-large
+					span.nav-label Starter view
+			li([ngClass]="{active: activeRoute('dashboards')}")
+				a(href='#')
+					i.fa.fa-th-large
+					span.nav-label Dashboard examples
+					span.fa.arrow
+				ul.nav.nav-second-level.collapse([ngClass]="{in: activeRoute('dashboards')}")
+					li([ngClass]="{active: activeRoute('dashboard1')}")
+						a([routerLink]="['/dashboards/dashboard1']") Dashboard v.1
+					li([ngClass]="{active: activeRoute('dashboard2')}")
+						a([routerLink]="['/dashboards/dashboard2']") Dashboard v.2
+					li([ngClass]="{active: activeRoute('dashboard3')}")
+						a([routerLink]="['/dashboards/dashboard3']") Dashboard v.3
+					li([ngClass]="{active: activeRoute('dashboard4')}")
+						a([routerLink]="['/dashboards/dashboard4']") Dashboard v.4
+					li([ngClass]="{active: activeRoute('dashboard5')}")
+						a([routerLink]="['/dashboards/dashboard5']") Dashboard v.5
+			li([ngClass]="{active: activeRoute('fullcalendar')}")
+				a([routerLink]="['/fullcalendar']")
+					i.fa.fa-th-large
+					span.nav-label Full Calendar
+			li([ngClass]="{active: activeRoute('login')}")
+				a([routerLink]="['/login']")
+					i.fa.fa-th-large
+					span.nav-label Login example
